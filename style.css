@@ -1,7 +1,15 @@
 .jFont {
 	font-family:'Kaushan Script', cursive;
+	text-decoration: none;
+	color: white !important;
 }
 
 .jmFont {
 	font-family: 'Amita', cursive;
+	color: white;
+}
+
+.fontColor {
+	text-decoration: none; 
+	color: white !important;
 }
