@@ -2,7 +2,7 @@
   "name": "puppy-love",
   "version": "1.0.0",
   "description": "project 2",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "sequelize": "^3.30.4"
   },

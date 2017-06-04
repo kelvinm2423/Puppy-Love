@@ -1,32 +1,34 @@
+const Hapi = require('hapi');
+const Path = require('path');
 
-//dependencies
+const server = new Hapi.Server();
 
-var express = require("express");
-var bodyParser = require("body-parser");
-var db = require("./models");
+server.connection({ port: 8080 });
 
-//setup
+server.register(require('vision'), function(err){
+	//throwing the err
+	if(err) {
+		throw err;
+	}
 
-var app = express();
-var PORT = process.env.PORT || 8080;
+	//make this the route for our puppyLove webApp
+	server.route({
+	    method: 'GET',
+	    path: '/',
+	    handler: function(request, reply) {
+	        //what to display on the 'home page' static file
+	        reply.view('index');
+	    }
+	});
 
-//parsing
+	server.views({
+		engines: { html: require('handlebars') },
+		relativeTo: __dirname,
+		path: 'public'
+	});
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+});
 
-//static directory
-
-app.use(express.static("./public"));
-
-//routes (search being the only one for now)
-
-require("./routes/search.js")(app);
-
-db.sequelize.sync();
-
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+server.start(function() {
+    console.log('Server runnning at: ', server.info.uri);
 });
