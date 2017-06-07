@@ -16,6 +16,9 @@ server.register(require('inert'), function(err) {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
+
+
+            // SQL data is console logged in the server
             db.Puppy.findAll({}).then(results => console.log(results));
             //what to display on the 'home page' static file
             reply.file('./public/index.html');
