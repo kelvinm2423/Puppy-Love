@@ -1,4 +1,4 @@
- CREATE DATABASE puppylove;
+CREATE DATABASE puppylove;
 
  USE puppylove;
 
@@ -30,7 +30,3 @@ INSERT INTO puppy (breed, age, gender, image, ownerFirstName, ownerLastName, own
 
 
   
-  
-  
-
-
