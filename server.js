@@ -16,12 +16,26 @@ server.register(require('inert'), function(err) {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
-            db.Puppy.findAll({}).then(results => console.log(results));
+            //MySQL displays in the node console
+            
             //what to display on the 'home page' static file
-            reply.file('./public/index.html');
+             reply.file('./public/index.html');
 
         }
     });
+    server.route({
+        method: 'GET',
+        path: '/search',
+        handler: function(request, reply) {
+            //MySQL displays in the node console
+            //in where put other columns followed by request query columnname --
+            db.Puppy.findAll({where:{breed:request.query.breed}}).then(results => reply(results));
+            //what to display on the 'home page' static file
+            // reply.file('./public/index.html');
+
+        }
+    });
+
     server.route({
         method: 'GET',
         path: '/{param*}',
@@ -31,15 +45,13 @@ server.register(require('inert'), function(err) {
             }
         }
     });
-    // server.views({
-    //     engines: { html: require('handlebars') },
-    //     relativeTo: __dirname,
-    //     path: 'public'
-    // });
+
+
+
 
 });
 
-db.sequelize.sync({ force: true });
+db.sequelize.sync({ force: false });
 
 
 

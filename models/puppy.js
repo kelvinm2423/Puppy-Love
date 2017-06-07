@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
 
     var Puppy = sequelize.define(
-
+//need to add other columns --
         "Puppy", {
 
             breed: {
