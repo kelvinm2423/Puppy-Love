@@ -29,7 +29,7 @@ server.register(require('inert'), function(err) {
         handler: function(request, reply) {
             //MySQL displays in the node console
             //in where put other columns followed by request query columnname --
-            db.Puppy.findAll({where:{breed:request.query.breed}}).then(results => reply(results));
+            db.Puppy.findAll({where:{breed:request.query.breed},{age:request.query.age},{gender:request.query.gender},{image:request.query.image},{ownerFirstName:request.query.ownerFirstName},{ownerLastName:request.query.ownerLastName},{ownerEmail:request.query.ownerEmail},{ownerAddress:request.query.ownerAddress},{ownerCity:request.query.ownerCity},{ownerState:request.query.ownerState},{ownerZipcode:request.query.ownerZipcode}}).then(results => reply(results));
             //what to display on the 'home page' static file
             // reply.file('./public/index.html');
 
