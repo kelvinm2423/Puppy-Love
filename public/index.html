@@ -80,16 +80,100 @@
         <label class="col-md-4 control-label" for="search"></label>
         <div class="col-md-4">
             <button id="search" name="search" class="btn btn-primary">Search</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                post my dog
+            </button>
         </div>
-        <div id='render'>
+    </div>
+    <!-- this is where the data is rendered after seaech -->
+    <div id='render'>
+    </div>
+    <!-- posting your dog -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Post my dog</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="location">City</label>
+                                <div class="col-md-4">
+                                    <input id="location" name="location" type="text" class="form-control input-md">
+                                </div>
+                            </div>
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="breed">Breed</label>
+                                <div class="col-md-4">
+                                    <select id="breed" name="breed" class="form-control">
+                                        <option value="">Select a Breed</option>
+                                        <option value="1">Affenpinscher</option>
+                                        <option value="2">Afghan Hound</option>
+                                        <option value="3">Airedale Terrier</option>
+                                        <option value="4">Akita</option>
+                                        <option value="5">Pitbull</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="age">Age</label>
+                                <div class="col-md-4">
+                                    <select id="age" name="age" class="form-control">
+                                        <option value="">Select Age</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="gender">Gender</label>
+                                <div class="col-md-2">
+                                    <select id="gender" name="gender" class="form-control">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary">POST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- jQuery script -->
-        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="js/script.js"></script>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArwjNJfIL4ZnCmRBfzupwZ4cMX43Bxx5E&libraries=places&callback=initAutocomplete" async defer></script>
+    </div>
+    <!-- jQuery script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArwjNJfIL4ZnCmRBfzupwZ4cMX43Bxx5E&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 
 </html>
