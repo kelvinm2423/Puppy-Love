@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     //When the user clicks the search button, collect the information in the form, send it to the server
     $('#search').click(function(e) {
         e.preventDefault();
@@ -67,6 +68,17 @@ $('#post').click(function(e) {
     var newPost = new PostDog($('#breed1 option:selected').text(), $('#age1').val(), $('#gender1').val(), $('#image1').val(), $('#ownerFirstName1').val(), $('#ownerFirstName1').val(), $('#ownerEmail1').val(), $('#location1').val());
     //code to send this object back to the data base goes here:
     console.log(newPost);
+/*
+    Sequelize.sync().then(function() {
+
+        //option1
+        var puppyInstance = Puppy.build.call(newPost).save();
+
+        //option2
+        Puppy.create.call(newPost);
+    });
+        
+*/
     // clean out the variable
     var newPost = {};
 });
