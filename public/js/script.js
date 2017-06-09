@@ -70,18 +70,9 @@
         $.post("/post", newPost, function(data) {
             console.log(data);
             //lost - jayce
+            console.log('Something was just posted.');
         });
-        /*
-            Sequelize.sync().then(function() {
 
-                //option1
-                var puppyInstance = Puppy.build.call(newPost).save();
-
-                //option2
-                Puppy.create.call(newPost);
-            });
-                
-        */
         // clean out the variable
         var newPost = {};
     });

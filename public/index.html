@@ -21,7 +21,7 @@
             <p class="jmFont">Love doesn't just belong to Humans</p>
         </div>
     </div>
-    <form class="form-horizontal">
+    <form class="form-horizontal" action="/search">
         <fieldset>
             <!-- Text input-->
             <div class="form-group">
@@ -89,9 +89,6 @@
     <!-- this is where the data is rendered after seaech -->
     <div id='render'>
     </div>
-
-
-    
     <!-- posting your dog -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -102,7 +99,7 @@
                     <h4 class="modal-title" id="myModalLabel">POST MY DOG</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="post" action="/post">
                         <fieldset>
                             <!-- Text input-->
                             <div class="form-group">

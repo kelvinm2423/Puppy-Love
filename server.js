@@ -5,8 +5,8 @@ const server = new Hapi.Server();
 
 
 //new module exports but still lost
-module.exports = models;
-module.exports = public;
+
+
 
 server.connection({ port: 8080 });
 
@@ -46,29 +46,38 @@ server.register(require('inert'), function(err) {
     });
 
 
-//we need this route but i am lost
+    //we need this route but i am lost
     server.route({
-        method: 'GET',
-        path: '/post',
-        handler: function(request, reply) {
+            method: 'GET',
+            path: '/post',
+            handler: function(request, reply) {
 
+                /*
             Sequelize.sync().then(function() {
-                    Puppy.create.call(newPost);
+
+                //option1
+                var puppyInstance = Puppy.build.call(newPost).save();
+
+                //option2
+                Puppy.create.call(newPost);
+            });
+                
+        */
 
 
             });
-        }
-    });
+    }
+});
 
-    server.route({
-        method: 'GET',
-        path: '/{param*}',
-        handler: {
-            directory: {
-                path: 'public'
-            }
-        }
-    });
+server.route({
+method: 'GET',
+path: '/{param*}',
+handler: {
+    directory: {
+        path: 'public'
+    }
+}
+});
 
 });
 
