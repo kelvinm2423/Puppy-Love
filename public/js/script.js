@@ -1,33 +1,32 @@
 $(document).ready(function() {
-    //When the user clicks the submit button, collect the information in the form, send it to the server
-    $('#submit').click(function(e) {
+    //When the user clicks the search button, collect the information in the form, send it to the server
+    $('#search').click(function(e) {
         e.preventDefault();
-        var input = document.getElementById('location');
-        var autocomplete = new google.maps.places.Autocomplete(input);
-        var location = $('#location').val();
+        var ownerCity = $('#location').val();
+        // var autocomplete = new google.maps.places.Autocomplete(location);
         var breed = $('#breed option:selected').text();
         var age = $('#age').val();
         var gender = $('#gender').val();
-        var image = $('#image').val();
-        var ownerFirstName = $('#ownerFirstName').val();
-        var ownerLastName = $('#ownerFirstName').val();
-        var ownerEmail = $('#ownerEmail').val();
-        var ownerAddress = $('#ownerAddress').val();
-        var ownerCity = $('ownerCity').val();
-        var ownerState = $('#ownerState').val();
-        var ownerZipcode = $('#ownerZipcode').val();
+        // var image = $('#image').val();
+        // var ownerFirstName = $('#ownerFirstName').val();
+        // var ownerLastName = $('#ownerFirstName').val();
+        // var ownerEmail = $('#ownerEmail').val();
+        // var ownerAddress = $('#ownerAddress').val();
+        // var ownerCity = $('ownerCity').val();
+        // var ownerState = $('#ownerState').val();
+        // var ownerZipcode = $('#ownerZipcode').val();
         var data = {
             breed: breed,
             age: age,
             gender: gender,
-            image: image,
-            ownerFirstName: ownerFirstName,
-            ownerLastName: ownerLastName,
-            ownerEmail: ownerEmail,
-            ownerAddress: ownerAddress,
+            // image: image,
+            // ownerFirstName: ownerFirstName,
+            // ownerLastName: ownerLastName,
+            // ownerEmail: ownerEmail,
+            // ownerAddress: ownerAddress,
             ownerCity: ownerCity,
-            ownerState: ownerState,
-            ownerZipcode: ownerZipcode,
+            // ownerState: ownerState,
+            // ownerZipcode: ownerZipcode,
         }
         $.get('/search', data, function(results) {
             $('#render').empty();
@@ -35,7 +34,7 @@ $(document).ready(function() {
                 //Below is going to be the HTML that will render the results
                 //javascript template literals
                 $('#render').append(`
-                    <h2 >${result.location}</h2>
+                    <h2 >${result.ownerCity}</h2>
                     <h2 >${result.breed}</h2>
                     <h2>${result.age}</h2>
                     <h2 >${result.sex}</h2>

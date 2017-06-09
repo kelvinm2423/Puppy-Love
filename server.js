@@ -33,15 +33,17 @@ server.register(require('inert'), function(err) {
                 breed: request.query.breed, 
                 age: request.query.age, 
                 gender: request.query.gender, 
-                image: request.query.image, 
-                ownerFirstName: request.query.ownerFirstName, 
-                ownerLastName: request.query.ownerLastName, 
-                ownerEmail: request.query.ownerEmail, 
-                ownerAddress: request.query.ownerAddress, 
+                // image: request.query.image, 
+                // ownerFirstName: request.query.ownerFirstName, 
+                // ownerLastName: request.query.ownerLastName, 
+                // ownerEmail: request.query.ownerEmail, 
+                // ownerAddress: request.query.ownerAddress, 
                 ownerCity: request.query.ownerCity, 
-                ownerState: request.query.ownerState, 
-                ownerZipcode: request.query.ownerZipcode 
-            } }).then(results => reply(results));
+                // ownerState: request.query.ownerState, 
+                // ownerZipcode: request.query.ownerZipcode 
+            } }).then(function(results) { 
+                        console.log(results);  
+                    });
             //what to display on the 'home page' static file
             // reply.file('./public/index.html');
 
