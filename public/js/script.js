@@ -7,12 +7,27 @@ $(document).ready(function() {
         var location = $('#location').val();
         var breed = $('#breed option:selected').text();
         var age = $('#age').val();
-        var sex = $('#sex').val();
+        var gender = $('#gender').val();
+        var image = $('#image').val();
+        var ownerFirstName = $('#ownerFirstName').val();
+        var ownerLastName = $('#ownerFirstName').val();
+        var ownerEmail = $('#ownerEmail').val();
+        var ownerAddress = $('#ownerAddress').val();
+        var ownerCity = $('ownerCity').val();
+        var ownerState = $('#ownerState').val();
+        var ownerZipcode = $('#ownerZipcode').val();
         var data = {
-            location: location,
             breed: breed,
             age: age,
-            sex: sex,
+            gender: gender,
+            image: image,
+            ownerFirstName: ownerFirstName,
+            ownerLastName: ownerLastName,
+            ownerEmail: ownerEmail,
+            ownerAddress: ownerAddress,
+            ownerCity: ownerCity,
+            ownerState: ownerState,
+            ownerZipcode: ownerZipcode,
         }
         $.get('/search', data, function(results) {
             $('#render').empty();
@@ -20,9 +35,10 @@ $(document).ready(function() {
                 //Below is going to be the HTML that will render the results
                 //javascript template literals
                 $('#render').append(`
-
+                    <h2 >${result.location}</h2>
                     <h2 >${result.breed}</h2>
-                    <p>${result.age}</p>
+                    <h2>${result.age}</h2>
+                    <h2 >${result.sex}</h2>
                 `);
             }
         }); // end of ajax 
