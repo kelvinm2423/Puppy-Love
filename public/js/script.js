@@ -37,7 +37,7 @@ $(document).ready(function() {
                     <h2 >${result.ownerCity}</h2>
                     <h2 >${result.breed}</h2>
                     <h2>${result.age}</h2>
-                    <h2 >${result.sex}</h2>
+                    <h2 >${result.gender}</h2>
                 `);
             }
         }); // end of ajax 

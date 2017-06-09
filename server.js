@@ -41,9 +41,7 @@ server.register(require('inert'), function(err) {
                 ownerCity: request.query.ownerCity, 
                 // ownerState: request.query.ownerState, 
                 // ownerZipcode: request.query.ownerZipcode 
-            } }).then(function(results) { 
-                        console.log(results);  
-                    });
+            } }).then(results => reply(results));
             //what to display on the 'home page' static file
             // reply.file('./public/index.html');
 
