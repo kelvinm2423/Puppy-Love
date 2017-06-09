@@ -3,6 +3,11 @@ const Path = require('path');
 const db = require('./models');
 const server = new Hapi.Server();
 
+
+//new module exports but still lost
+module.exports = models;
+module.exports = public;
+
 server.connection({ port: 8080 });
 
 server.register(require('inert'), function(err) {
@@ -16,35 +21,42 @@ server.register(require('inert'), function(err) {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
-            //MySQL displays in the node console
 
             //what to display on the 'home page' static file
             reply.file('./public/index.html');
 
         }
     });
+
     server.route({
         method: 'GET',
         path: '/search',
         handler: function(request, reply) {
             //MySQL displays in the node console
             //in where put other columns followed by request query columnname --
-            db.Puppy.findAll({ where: { 
-                breed: request.query.breed, 
-                age: request.query.age, 
-                gender: request.query.gender, 
-                // image: request.query.image, 
-                // ownerFirstName: request.query.ownerFirstName, 
-                // ownerLastName: request.query.ownerLastName, 
-                // ownerEmail: request.query.ownerEmail, 
-                // ownerAddress: request.query.ownerAddress, 
-                ownerCity: request.query.ownerCity, 
-                // ownerState: request.query.ownerState, 
-                // ownerZipcode: request.query.ownerZipcode 
-            } }).then(results => reply(results));
-            //what to display on the 'home page' static file
-            // reply.file('./public/index.html');
+            db.Puppy.findAll({
+                where: {
+                    breed: request.query.breed,
+                    age: request.query.age,
+                    gender: request.query.gender,
+                    ownerCity: request.query.ownerCity,
+                }
+            }).then(results => reply(results));
+        }
+    });
 
+
+//we need this route but i am lost
+    server.route({
+        method: 'GET',
+        path: '/post',
+        handler: function(request, reply) {
+
+            Sequelize.sync().then(function() {
+                    Puppy.create.call(newPost);
+
+
+            });
         }
     });
 
@@ -57,9 +69,6 @@ server.register(require('inert'), function(err) {
             }
         }
     });
-
-
-
 
 });
 
