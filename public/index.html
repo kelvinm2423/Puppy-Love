@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Materialize CDN -->
-    <!-- Compiled and minified CSS -->
+   <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <!-- Google Fonts CDN -->
     <link href="https://fonts.googleapis.com/css?family=Amita|Kaushan+Script" rel="stylesheet">
@@ -89,6 +88,7 @@
     <!-- this is where the data is rendered after seaech -->
     <div id='render'>
     </div>
+    </div>
     <!-- posting your dog -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -105,7 +105,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="location">City</label>
                                 <div class="col-md-4">
-                                    <input id="location" name="location" type="text" class="form-control input-md">
+                                    <input id="location1" name="location" type="text" class="form-control input-md">
                                 </div>
                             </div>
                             <!-- Select Basic -->
@@ -145,13 +145,14 @@
                             <!-- Select Basic -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="gender">Gender</label>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <select id="gender" name="gender" class="form-control">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
                                 </div>
                             </div>
+                        </fieldset>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -171,7 +172,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- Compiled and minified JavaScript -->
+    <!-- Materialize CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArwjNJfIL4ZnCmRBfzupwZ4cMX43Bxx5E&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
