@@ -82,13 +82,16 @@
             <button id="search" name="search" class="btn btn-primary">Search</button>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                post my dog
+                POST MY DOG
             </button>
         </div>
     </div>
     <!-- this is where the data is rendered after seaech -->
     <div id='render'>
     </div>
+
+
+
     <!-- posting your dog -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -96,7 +99,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Post my dog</h4>
+                    <h4 class="modal-title" id="myModalLabel">POST MY DOG</h4>
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal">
@@ -105,14 +108,14 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="location">City</label>
                                 <div class="col-md-4">
-                                    <input id="location" name="location" type="text" class="form-control input-md">
+                                    <input id="location1" name="location" type="text" class="form-control input-md">
                                 </div>
                             </div>
                             <!-- Select Basic -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="breed">Breed</label>
                                 <div class="col-md-4">
-                                    <select id="breed" name="breed" class="form-control">
+                                    <select id="breed1" name="breed" class="form-control">
                                         <option value="">Select a Breed</option>
                                         <option value="1">Affenpinscher</option>
                                         <option value="2">Afghan Hound</option>
@@ -127,7 +130,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="age">Age</label>
                                 <div class="col-md-4">
-                                    <select id="age" name="age" class="form-control">
+                                    <select id="age1" name="age" class="form-control">
                                         <option value="">Select Age</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -146,7 +149,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="gender">Gender</label>
                                 <div class="col-md-2">
-                                    <select id="gender" name="gender" class="form-control">
+                                    <select id="gender1" name="gender" class="form-control">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
@@ -160,7 +163,7 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                         <div class="col-md-4">
-                            <button type="button" class="btn btn-primary">POST</button>
+                            <button id='post' type="button" class="btn btn-primary">POST</button>
                         </div>
                     </div>
                 </div>

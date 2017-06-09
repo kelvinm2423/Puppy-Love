@@ -44,6 +44,42 @@ $(document).ready(function() {
     }); //end of submit 
     //Use AJAX to send it to the server
 });
+
+/*********************************
+    Start - POST Method into MySQL - Jayce Azua
+ *********************************/
+
+//Object Constructor for post
+var PostDog = function (breed, age, gender, image, ownerFirstName, ownerLastName, ownerEmail, ownerCity) {
+    this.breed          = breed;
+    this.age            = age;
+    this.gender         = gender;
+    this.image          = image;
+    this.ownerFirstName = ownerFirstName;
+    this.ownerLastName  = ownerLastName;
+    this.ownerEmail     = ownerEmail;
+    this.ownerCity      = ownerCity;
+   
+};
+
+$('#post').click(function(e) {
+    e.preventDefault();
+    var newPost = new PostDog($('#breed1 option:selected').text(), $('#age1').val(), $('#gender1').val(), $('#image1').val(), $('#ownerFirstName1').val(), $('#ownerFirstName1').val(), $('#ownerEmail1').val(), $('#location1').val());
+    //code to send this object back to the data base goes here:
+    console.log(newPost);
+    // clean out the variable
+    var newPost = {};
+});
+
+/*********************************
+    End - POST Method into MySQL - Jayce Azua
+ *********************************/
+
+
+
+
+
+
 //Google maps 
 function initAutocomplete() {
     // Create the autocomplete object, restricting the search to geographical
