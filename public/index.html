@@ -20,7 +20,7 @@
             <p class="jmFont">Love doesn't just belong to Humans</p>
         </div>
     </div>
-    <form class="form-horizontal" action="/search">
+    <form class="form-horizontal" method="GET">
         <fieldset>
             <!-- Text input-->
             <div class="form-group">
@@ -89,6 +89,11 @@
     <div id='render'>
     </div>
 
+
+
+
+
+
     <!-- posting your dog -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -99,7 +104,7 @@
                     <h4 class="modal-title" id="myModalLabel">POST MY DOG</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" method="post" action="/post">
+                    <form id='form2' class="form-horizontal" method="post">
                         <fieldset>
                             <!-- Text input-->
                             <div class="form-group">
@@ -158,7 +163,7 @@
                 <div class="modal-footer">
                     <div class="row">
                         <div class="col-md-4">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button id='closePost' type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                         <div class="col-md-4">
                             <button id='post' type="button" class="btn btn-primary">POST</button>

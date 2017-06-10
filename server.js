@@ -4,11 +4,12 @@ const db = require('./models');
 const server = new Hapi.Server();
 
 
-//new module exports but still lost
-
-
-
 server.connection({ port: 8080 });
+
+
+
+
+
 
 server.register(require('inert'), function(err) {
     //throwing the err
@@ -48,40 +49,44 @@ server.register(require('inert'), function(err) {
 
     //we need this route but i am lost
     server.route({
-            method: 'GET',
-            path: '/post',
-            handler: function(request, reply) {
+        method: 'POST',
+        path: '/post',
+        handler: function(request, reply) {
 
-                /*
-            Sequelize.sync().then(function() {
+         db.Puppy.create({
+            breed           : request.payload.breed,
+            age             : request.payload.age,
+            gender          : request.payload.gender,
+            image           : request.payload.image,
+            ownerFirstName  : request.payload.ownerFirstName,
+            ownerLastName   : request.payload.ownerLastName,
+            ownerEmail      : request.payload.ownerEmail,
+            ownerCity       : request.payload.ownerCity,
+         }).then(results => {
+            reply('Your dog is up for view, hopefully we can pimp it.');
+         });
 
-                //option1
-                var puppyInstance = Puppy.build.call(newPost).save();
-
-                //option2
-                Puppy.create.call(newPost);
-            });
-                
-        */
+        }
+    });
 
 
-            });
-    }
+
+    /***********************
+        Leave this alone!
+     ***********************/
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: 'public'
+            }
+        }
+    });
+
 });
 
-server.route({
-method: 'GET',
-path: '/{param*}',
-handler: {
-    directory: {
-        path: 'public'
-    }
-}
-});
-
-});
-
-db.sequelize.sync({ force: false });
+db.sequelize.sync({ force: true });
 
 
 
