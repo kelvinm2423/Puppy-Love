@@ -83,7 +83,7 @@ server.register(require('inert'), function(err) {
 });
 
 
-db.sequelize.sync({ force: true });
+db.sequelize.sync({ force: false });
 
 
 server.start(function() {
