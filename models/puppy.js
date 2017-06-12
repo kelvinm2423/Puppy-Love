@@ -4,6 +4,14 @@ module.exports = function(sequelize, DataTypes) {
 //need to add other columns --
         "Puppy", {
 
+            dogName: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                // validate: {
+                //     len: [1]
+                // }
+            },
+
             breed: {
                 type: DataTypes.STRING,
                 allowNull: false,

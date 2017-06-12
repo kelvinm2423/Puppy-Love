@@ -3,13 +3,7 @@ const Path = require('path');
 const db = require('./models');
 const server = new Hapi.Server();
 
-
 server.connection({ port: 8080 });
-
-
-
-
-
 
 server.register(require('inert'), function(err) {
     //throwing the err
@@ -17,7 +11,7 @@ server.register(require('inert'), function(err) {
         throw err;
     }
 
-    //make this the route for our puppyLove webApp
+
     server.route({
         method: 'GET',
         path: '/',
@@ -47,24 +41,25 @@ server.register(require('inert'), function(err) {
     });
 
 
-    //we need this route but i am lost
+
     server.route({
         method: 'POST',
         path: '/post',
         handler: function(request, reply) {
 
-         db.Puppy.create({
-            breed           : request.payload.breed,
-            age             : request.payload.age,
-            gender          : request.payload.gender,
-            image           : request.payload.image,
-            ownerFirstName  : request.payload.ownerFirstName,
-            ownerLastName   : request.payload.ownerLastName,
-            ownerEmail      : request.payload.ownerEmail,
-            ownerCity       : request.payload.ownerCity,
-         }).then(results => {
-            reply('Your dog is up for view, hopefully we can pimp it.');
-         });
+            db.Puppy.create({
+                dogName: request.payload.dogName,
+                breed: request.payload.breed,
+                age: request.payload.age,
+                gender: request.payload.gender,
+                image: request.payload.image,
+                ownerFirstName: request.payload.ownerFirstName,
+                ownerLastName: request.payload.ownerLastName,
+                ownerEmail: request.payload.ownerEmail,
+                ownerCity: request.payload.ownerCity,
+            }).then(results => {
+                reply('The dog has been posted!');
+            });
 
         }
     });
@@ -78,6 +73,7 @@ server.register(require('inert'), function(err) {
         method: 'GET',
         path: '/{param*}',
         handler: {
+
             directory: {
                 path: 'public'
             }
@@ -86,8 +82,8 @@ server.register(require('inert'), function(err) {
 
 });
 
-db.sequelize.sync({ force: true });
 
+db.sequelize.sync({ force: true });
 
 
 server.start(function() {
